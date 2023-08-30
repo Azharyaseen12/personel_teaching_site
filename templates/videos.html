@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+ <div class="">
+   <h1 class="text-center" style="border-bottom: 2px solid black">Videos</h1>
+ <div class="container my-4 pd-0">
+    <div class="row">       
+      
+          {% for video in videos %} 
+          <div class="col-md-4 my-4" style="border: 1px solid blue; border-radius:20px">
+          <video class="container my-4" width="200" height="300" controls="controls">
+            <source src="{{ video.video_file.url }}" type="video/mp4">
+          </video>
+          <h2 class="text-center" style="border:2px solid blue ;border-radius:20px">{{ video.title }}</h2>
+        </div>
+          {% endfor %}
+  </div>  
+</div>
+</div>
+ 
+{% endblock %}
